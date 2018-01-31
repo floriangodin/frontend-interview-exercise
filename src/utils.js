@@ -12,6 +12,13 @@ export const getRankingTimeframeInterval = (timeframeSelector) => {
       stop: moment(),
     };
   }
+  //Je rajoute la condition pour la selection de la semaine dernière, day(-7) =last sunday
+  else if (timeframeSelector === 'last_week') {
+    return {
+      start: moment().day(-1),
+      stop: moment().day(-7),
+    };
+  }
   return null;
 };
 
