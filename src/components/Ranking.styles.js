@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+  import styled from 'styled-components';
 import { neutrals, spacings } from '../theme';
 
 // TODO: This component needs some more styles
@@ -6,21 +6,41 @@ export const StyledRanking = styled.ol`
   max-width: 613px;
   margin: 0 auto;
   padding: 0;
+  border-radius: 4px;
+  box-shadow:0 1px 3px #DAE2E6;
   background-color: ${neutrals.lightest};
 
   > li {
+    display: flex;
+    align-items:center;
     counter-increment: item;
+    height:84px;
 
     ::before {
       content: counter(item);
-      margin-right: ${spacings.m}px;
+      font-size:13px;
+      color:#2C2D30;
+      font-family:'lato';
+      font-weight:600;
+      padding: 0 16px 0 27px;
+      margin: auto 0;
     }
+  
+    :nth-child(even) {
+  background-color: #F7F9FB;
+  }
+  span:nth-child(1),
+  span:nth-child(2),
+  span:nth-child(3) {
+    margin-right:37px;
+  }
 
     :nth-child(1)::after,
     :nth-child(2)::after,
     :nth-child(3)::after {
       font-size: 16px;
-      margin-left: ${spacings.s}px;
+      position: relative;
+      right: 32px;
     }
 
     :nth-child(1)::after {
@@ -38,11 +58,16 @@ export const StyledRanking = styled.ol`
 `;
 
 export const StyledPoints = styled.span`
-  margin-left: auto;
+  margin: auto 32px auto auto;
+  font-weight:bold;
+  font-size:13px;
+  color: #2C2D30;
+  font-family:'lato';
 `;
 
 export const StyledImg = styled.div`
-  margin-right: ${spacings.m}px;
+  margin-right:24px;
+  padding: 18px 0;
 `;
 
 
